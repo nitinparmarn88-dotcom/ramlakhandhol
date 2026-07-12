@@ -35,7 +35,7 @@ if(form){
             "_blank"
         );
     });
-}
+} 
 
 const form = document.querySelector("#booking form");
 const galleryImages = document.querySelectorAll(".gallery img");
