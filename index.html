@@ -226,6 +226,46 @@ color:#ddd;
 #map iframe{
 max-width:1000px;
 border-radius:15px;
+}.slider{
+position:relative;
+height:90vh;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.overlay h1{
+font-size:48px;
+}
+
+.overlay p{
+font-size:22px;
+margin:20px;
 }
 </style>
 </head>
@@ -247,7 +287,31 @@ border-radius:15px;
 
 </header>
 
-<div class="hero">
+<div <section class="slider">
+
+<img src="images/photo1.jpg" class="slide active">
+
+<img src="images/photo2.jpg" class="slide">
+
+<img src="images/photo3.jpg" class="slide">
+
+<img src="images/photo4.jpg" class="slide">
+
+<img src="images/photo5.jpg" class="slide">
+
+<div class="overlay">
+
+<h1>🥁 राम लखन धमाल ढोल ताशा पार्टी</h1>
+
+<p>शादी • विवाह • गणेश विसर्जन • माता विसर्जन • चल समारोह</p>
+
+<a class="btn" href="https://wa.me/918827907601">
+Book Now
+</a>
+
+</div>
+
+</section>
 
 <div>
 
