@@ -5,105 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>राम लखन धमाल ढोल ताशा पार्टी - देपालपुर</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
-font-family:Arial,sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
 background:#111;
 color:white;
-text-align:center;
 }
 
 header{
-background:#ff6600;
-padding:25px;
+background:linear-gradient(90deg,#ff6a00,#ff9900);
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
 }
 
-h1{
-margin:0;
-font-size:34px;
+header h2{
+font-size:24px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
 }
 
 .hero{
-padding:40px 20px;
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero p{
+font-size:20px;
+margin:20px;
 }
 
 .btn{
 display:inline-block;
-background:#25D366;
+padding:15px 30px;
+background:#ff6600;
 color:white;
-padding:15px 25px;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
 font-size:20px;
-margin-top:20px;
 }
 
 section{
-padding:30px;
+padding:70px 20px;
+text-align:center;
 }
 
-.card{
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.box{
 background:#222;
-padding:20px;
-border-radius:12px;
-margin:15px;
+padding:25px;
+border-radius:15px;
 }
 
 footer{
-background:#000;
+background:black;
 padding:20px;
+text-align:center;
 }
-</style>
 
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:20px;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-<h1>🥁 राम लखन धमाल ढोल ताशा पार्टी</h1>
-<p>देपालपुर | जिला इंदौर | मध्यप्रदेश</p>
+
+<h2>🥁 राम लखन धमाल</h2>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+
+</nav>
+
 </header>
 
 <div class="hero">
-<h2>आपका स्वागत है</h2>
 
-<p>
-शादी • विवाह • चल समारोह • गणेश विसर्जन • माता विसर्जन • इंगेजमेंट • सभी शुभ कार्यों के लिए बुकिंग
-</p>
+<div>
 
-<a class="btn" href="https://wa.me/918827907601">
-WhatsApp Booking
-</a>
+<h1>राम लखन धमाल ढोल ताशा पार्टी</h1>
+
+<p>शादी • विवाह • गणेश विसर्जन • माता विसर्जन • चल समारोह • इंगेजमेंट</p>
+
+<a class="btn" href="https://wa.me/918827907601">Book Now</a>
+
+</div>
 
 </div>
 
 <section>
 
-<div class="card">
-<h2>📞 संपर्क करें</h2>
+<h2>हमारी सेवाएँ</h2>
 
-<p>8827907601</p>
+<div class="services">
 
-<p>9770992964</p>
+<div class="box">🥁 शादी एवं विवाह</div>
 
-</div>
+<div class="box">🙏 गणेश विसर्जन</div>
 
-<div class="card">
+<div class="box">🚩 माता विसर्जन</div>
 
-<h2>📍 पता</h2>
+<div class="box">🎉 इंगेजमेंट</div>
 
-<p>देपालपुर, जिला इंदौर, मध्यप्रदेश</p>
+<div class="box">🎺 चल समारोह</div>
 
-</div>
-
-<div class="card">
-
-<h2>▶ YouTube</h2>
-
-<a style="color:orange;" href="https://youtube.com/@nitinparmardepalpur?si=c-pGyNHWfzXRLSBg">
-Nitin Parmar Depalpur
-</a>
+<div class="box">⭐ सभी शुभ कार्य</div>
 
 </div>
 
@@ -111,9 +166,13 @@ Nitin Parmar Depalpur
 
 <footer>
 
-© 2026 राम लखन धमाल ढोल ताशा पार्टी
+<h3>📞 8827907601 | 9770992964</h3>
+
+<p>देपालपुर | जिला इंदौर | मध्यप्रदेश</p>
 
 </footer>
+
+<a class="whatsapp" href="https://wa.me/918827907601">WhatsApp</a>
 
 </body>
 </html>
