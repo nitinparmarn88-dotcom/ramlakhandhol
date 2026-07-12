@@ -83,7 +83,7 @@ import {
   collection,
   getDocs
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
+console.log("Firebase Connected", window.db);
 async function loadPrograms() {
 
     if (!window.db) return;
