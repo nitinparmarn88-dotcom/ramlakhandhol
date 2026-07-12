@@ -12,14 +12,17 @@
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:15px;
-    padding:20px;
+    padding:15px;
 }
 
 .gallery img{
     width:100%;
+    max-width:350px;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    margin:auto;
     border-radius:12px;
-    cursor:pointer;
-    transition:0.3s;
 }
 
 .gallery img:hover{
