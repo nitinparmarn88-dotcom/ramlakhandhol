@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nitinparmarn88-dotcom.github.io/ramlakhandhol/sitemap.xml
