@@ -143,7 +143,8 @@ async function loadPrograms(){
 
 
     try{
-
+console.log("Trying Firestore");
+    console.log("Data Found:", snapshot.size);    
         const snapshot = await getDocs(collection(db,"programs"));
 console.log("Firebase Data", snapshot.size);
         console.log("Programs Found:", snapshot.size);
