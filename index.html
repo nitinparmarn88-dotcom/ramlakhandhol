@@ -7,7 +7,24 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<style>
+<style> 
+    .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
 
 *{
 margin:0;
@@ -176,6 +193,17 @@ font-size:20px;
 
     </div>
 </section>
+    <section id="gallery">
+    <h2>📸 हमारी गैलरी</h2>
+
+    <div class="gallery">
+        <img src="images/photo1.jpg" alt="Photo 1">
+        <img src="images/photo2.jpg" alt="Photo 2">
+        <img src="images/photo3.jpg" alt="Photo 3">
+        <img src="images/photo4.jpg" alt="Photo 4">
+        <img src="images/photo5.jpg" alt="Photo 5">
+    </div>
+    </section>
 <footer>
 
 <h3>📞 8827907601 | 9770992964</h3>
