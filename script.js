@@ -79,3 +79,37 @@ if(menuBtn){
         nav.classList.toggle("active");
     });
 }
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+async function loadPrograms() {
+
+    if (!window.db) return;
+
+    const list = document.getElementById("program-list");
+    if (!list) return;
+
+    list.innerHTML = "";
+
+    const snapshot = await getDocs(collection(window.db, "programs"));
+
+    snapshot.forEach((doc) => {
+
+        const data = doc.data();
+
+        list.innerHTML += `
+        <div class="review-box">
+            <h3>📅 ${data.date}</h3>
+            <p><b>📍 जगह:</b> ${data.location}</p>
+            <p><b>🎉 कार्यक्रम:</b> ${data.event}</p>
+            <p><b>🥁 ढोल:</b> ${data.dhol}</p>
+            <p>${data.details}</p>
+        </div>
+        `;
+    });
+
+}
+
+loadPrograms();
