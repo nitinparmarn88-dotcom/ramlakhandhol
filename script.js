@@ -1,22 +1,31 @@
-let slides = document.querySelectorAll(".slide");
+const form = document.querySelector("#booking form");
 
-let index = 0;
+if(form){
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
 
-setInterval(() => {
+        const name = form.querySelectorAll("input[type='text']")[0].value;
+        const phone = form.querySelector("input[type='tel']").value;
+        const date = form.querySelector("input[type='date']").value;
+        const address = form.querySelectorAll("input[type='text']")[1].value;
+        const service = form.querySelector("select").value;
+        const message = form.querySelector("textarea").value;
 
-slides[index].classList.remove("active");
+        const text = `*नई बुकिंग*
 
-index++;
+👤 नाम: ${name}
+📞 मोबाइल: ${phone}
+📅 तारीख: ${date}
+📍 पता: ${address}
+🎉 कार्यक्रम: ${service}
+📝 संदेश: ${message}`;
 
-if(index>=slides.length){
-
-index=0;
-
+        window.open(
+            `https://wa.me/918827907601?text=${encodeURIComponent(text)}`,
+            "_blank"
+        );
+    });
 }
-
-slides[index].classList.add("active");
-
-},3000);
 
 const form = document.querySelector("#booking form");
 
