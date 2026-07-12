@@ -311,6 +311,46 @@ line-height:1.6;
 .review-box h4{
 margin-top:10px;
 color:#ff9800;
+}#booking{
+padding:60px 20px;
+background:#181818;
+text-align:center;
+}
+
+#booking form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#booking input,
+#booking select,
+#booking textarea{
+padding:15px;
+font-size:16px;
+border:none;
+border-radius:10px;
+}
+
+#booking textarea{
+height:120px;
+resize:none;
+}
+
+#booking button{
+background:#ff6600;
+color:white;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+#booking button:hover{
+background:#ff8800;
 }
 </style>
 </head>
@@ -492,6 +532,38 @@ loading="lazy">
 <p>"हमारी शादी का माहौल यादगार बना दिया।"</p>
 <h4>- अजय, उज्जैन</h4>
 </div>
+
+</section>
+    <section id="booking">
+
+<h2>📝 ऑनलाइन बुकिंग</h2>
+
+<form>
+
+<input type="text" placeholder="पूरा नाम" required>
+
+<input type="tel" placeholder="मोबाइल नंबर" required>
+
+<input type="date" required>
+
+<input type="text" placeholder="कार्यक्रम का पता" required>
+
+<select required>
+<option value="">कार्यक्रम चुनें</option>
+<option>शादी</option>
+<option>विवाह</option>
+<option>गणेश विसर्जन</option>
+<option>माता विसर्जन</option>
+<option>चल समारोह</option>
+<option>इंगेजमेंट</option>
+<option>अन्य</option>
+</select>
+
+<textarea placeholder="अपना संदेश लिखें"></textarea>
+
+<button type="submit">📩 बुकिंग भेजें</button>
+
+</form>
 
 </section>
     <section id="contact">
