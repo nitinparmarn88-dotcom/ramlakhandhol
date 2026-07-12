@@ -1,3 +1,6 @@
+// ==========================
+// Image Slider
+// ==========================
 const slides = document.querySelectorAll(".slide");
 let index = 0;
 
@@ -8,10 +11,14 @@ if (slides.length > 0) {
         slides[index].classList.add("active");
     }, 3000);
 }
+
+// ==========================
+// Booking Form
+// ==========================
 const form = document.querySelector("#booking form");
 
-if(form){
-    form.addEventListener("submit", function(e){
+if (form) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const name = form.querySelectorAll("input[type='text']")[0].value;
@@ -35,27 +42,32 @@ if(form){
             "_blank"
         );
     });
-} 
+}
 
-const form = document.querySelector("#booking form");
+// ==========================
+// Gallery Lightbox
+// ==========================
 const galleryImages = document.querySelectorAll(".gallery img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".close");
 
-galleryImages.forEach(img=>{
-    img.addEventListener("click",()=>{
-        lightbox.style.display="flex";
-        lightboxImg.src=img.src;
+if (galleryImages.length > 0 && lightbox && lightboxImg && closeBtn) {
+
+    galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        });
     });
-});
 
-closeBtn.addEventListener("click",()=>{
-    lightbox.style.display="none";
-});
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
 
-lightbox.addEventListener("click",(e)=>{
-    if(e.target===lightbox){
-        lightbox.style.display="none";
-    }
-});
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+}
