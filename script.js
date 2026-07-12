@@ -87,30 +87,44 @@ import {
 console.log("Firebase Connected", window.db);
 async function loadPrograms() {
 
-    if (!window.db) return;
-
     const list = document.getElementById("program-list");
-    if (!list) return;
 
-    list.innerHTML = "";
+    if (!list) {
+        console.log("List not found");
+        return;
+    }
 
-    const snapshot = await getDocs(collection(window.db, "programs"));
+    if (!window.db) {
+        console.log("DB not found");
+        return;
+    }
 
-    snapshot.forEach((doc) => {
+    try {
 
-        const data = doc.data();
+        const snapshot = await getDocs(collection(window.db, "programs"));
 
-        list.innerHTML += `
-        <div class="review-box">
-            <h3>📅 ${data.date}</h3>
-            <p><b>📍 जगह:</b> ${data.location}</p>
-            <p><b>🎉 कार्यक्रम:</b> ${data.event}</p>
-            <p><b>🥁 ढोल:</b> ${data.dhol}</p>
-            <p>${data.details}</p>
-        </div>
-        `;
-    });
+        console.log("Documents:", snapshot.size);
 
+        list.innerHTML = "";
+
+        snapshot.forEach((doc) => {
+
+            const data = doc.data();
+
+            list.innerHTML += `
+            <div class="review-box">
+                <h3>📅 ${data.date}</h3>
+                <p><b>📍 जगह:</b> ${data.location}</p>
+                <p><b>🎉 कार्यक्रम:</b> ${data.event}</p>
+                <p><b>🥁 ढोल:</b> ${data.dhol}</p>
+                <p>${data.details}</p>
+            </div>
+            `;
+        });
+
+    } catch (e) {
+        console.log("Firestore Error:", e);
+    }
 }
 
-loadPrograms();
+setTimeout(loadPrograms,1000);
