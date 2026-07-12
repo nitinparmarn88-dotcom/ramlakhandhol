@@ -145,7 +145,7 @@ async function loadPrograms(){
     try{
 
         const snapshot = await getDocs(collection(db,"programs"));
-
+console.log("Firebase Data", snapshot.size);
         console.log("Programs Found:", snapshot.size);
 
 
