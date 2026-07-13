@@ -35,7 +35,9 @@ document.getElementById("save").addEventListener("click", async () => {
     });
 
     alert("✅ Program Save Successfully");
-
+    
+loadPrograms();
+    
     document.getElementById("date").value = "";
     document.getElementById("location").value = "";
     document.getElementById("event").value = "";
