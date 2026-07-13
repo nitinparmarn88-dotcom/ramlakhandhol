@@ -165,3 +165,17 @@ window.editProgram = function(id, date, location, event, dhol, details){
     document.getElementById("update").style.display = "block";
     document.getElementById("save").style.display = "none";
 }
+import { getAuth, signOut } 
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+const auth = getAuth();
+
+document.getElementById("logout").onclick = async () => {
+
+  await signOut(auth);
+
+  alert("Logout Successfully");
+
+  window.location.href="admin.html";
+
+};
