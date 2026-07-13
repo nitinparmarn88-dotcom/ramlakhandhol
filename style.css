@@ -39,3 +39,32 @@ transform:translateY(-5px);
 box-shadow:0 0 20px orange;
 
 }
+.review-box{
+
+transition:0.35s ease;
+
+}
+
+.review-box:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 10px 30px rgba(255,140,0,.5);
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all 0.8s ease;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
