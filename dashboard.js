@@ -1,3 +1,5 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
 import {
   getFirestore,
   collection,
@@ -5,11 +7,6 @@ import {
   getDocs,
   deleteDoc,
   doc
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-import {
-  getFirestore,
-  collection,
-  addDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -24,8 +21,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Save Program
 document.getElementById("save").addEventListener("click", async () => {
+
   try {
+
     await addDoc(collection(db, "programs"), {
       date: document.getElementById("date").value,
       location: document.getElementById("location").value,
@@ -34,23 +34,29 @@ document.getElementById("save").addEventListener("click", async () => {
       details: document.getElementById("details").value
     });
 
-    alert("✅ Program Save Successfully");
-    
-loadPrograms();
-    
+    alert("✅ Program Saved Successfully");
+
     document.getElementById("date").value = "";
     document.getElementById("location").value = "";
     document.getElementById("event").value = "";
     document.getElementById("dhol").value = "";
     document.getElementById("details").value = "";
 
+    loadPrograms();
+
   } catch (e) {
-    alert("❌ Error: " + e.message);
+
+    alert("❌ " + e.message);
+
   }
+
 });
+
+// Load Programs
 async function loadPrograms() {
 
   const list = document.getElementById("programs");
+
   list.innerHTML = "";
 
   const snapshot = await getDocs(collection(db, "programs"));
@@ -60,16 +66,21 @@ async function loadPrograms() {
     const data = item.data();
 
     list.innerHTML += `
-      <div style="border:1px solid #ccc;padding:10px;margin:10px;border-radius:10px;">
-        <b>${data.date}</b><br>
-        📍 ${data.location}<br>
-        🎉 ${data.event}<br>
-        🥁 ${data.dhol}<br>
-        📝 ${data.details}<br><br>
+      <div style="border:1px solid #ccc;padding:15px;margin:10px;border-radius:10px">
+        <h3>📅 ${data.date}</h3>
+
+        <p>📍 ${data.location}</p>
+
+        <p>🎉 ${data.event}</p>
+
+        <p>🥁 ${data.dhol}</p>
+
+        <p>${data.details}</p>
 
         <button onclick="deleteProgram('${item.id}')">
-          🗑 Delete
+        🗑 Delete
         </button>
+
       </div>
     `;
 
@@ -77,9 +88,10 @@ async function loadPrograms() {
 
 }
 
+// Delete Program
 window.deleteProgram = async function(id){
 
-  if(confirm("Delete Program?")){
+  if(confirm("क्या आप Delete करना चाहते हैं?")){
 
     await deleteDoc(doc(db,"programs",id));
 
