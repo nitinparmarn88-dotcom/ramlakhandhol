@@ -9,7 +9,6 @@ import {
   getDoc,
   doc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyBu191EYsFJSg2yiKA2xTjGIycAMuKRxZo",
   authDomain: "ram-lakhan-dhol-tasha.firebaseapp.com",
