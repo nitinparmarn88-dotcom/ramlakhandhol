@@ -77,9 +77,18 @@ async function loadPrograms() {
 
         <p>${data.details}</p>
 
-        <button onclick="deleteProgram('${item.id}')">
-        🗑 Delete
-        </button>
+        <button onclick="editProgram('${item.id}',
+'${data.date}',
+'${data.location}',
+'${data.event}',
+'${data.dhol}',
+'${data.details}')">
+📝 Edit
+</button>
+
+<button onclick="deleteProgram('${item.id}')">
+🗑 Delete
+</button>
 
       </div>
     `;
@@ -104,3 +113,13 @@ window.deleteProgram = async function(id){
 }
 
 loadPrograms();
+window.editProgram = function(id, date, location, event, dhol, details){
+
+    document.getElementById("date").value = date;
+    document.getElementById("location").value = location;
+    document.getElementById("event").value = event;
+    document.getElementById("dhol").value = dhol;
+    document.getElementById("details").value = details;
+
+    alert("अब जानकारी बदलो, Update वाला फीचर अगले स्टेप में जोड़ेंगे।");
+}
