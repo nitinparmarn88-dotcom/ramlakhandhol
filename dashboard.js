@@ -46,3 +46,47 @@ document.getElementById("save").addEventListener("click", async () => {
     alert("❌ Error: " + e.message);
   }
 });
+async function loadPrograms() {
+
+  const list = document.getElementById("programs");
+  list.innerHTML = "";
+
+  const snapshot = await getDocs(collection(db, "programs"));
+
+  snapshot.forEach((item) => {
+
+    const data = item.data();
+
+    list.innerHTML += `
+      <div style="border:1px solid #ccc;padding:10px;margin:10px;border-radius:10px;">
+        <b>${data.date}</b><br>
+        📍 ${data.location}<br>
+        🎉 ${data.event}<br>
+        🥁 ${data.dhol}<br>
+        📝 ${data.details}<br><br>
+
+        <button onclick="deleteProgram('${item.id}')">
+          🗑 Delete
+        </button>
+      </div>
+    `;
+
+  });
+
+}
+
+window.deleteProgram = async function(id){
+
+  if(confirm("Delete Program?")){
+
+    await deleteDoc(doc(db,"programs",id));
+
+    alert("✅ Deleted");
+
+    loadPrograms();
+
+  }
+
+}
+
+loadPrograms();
