@@ -120,7 +120,10 @@ async function loadPrograms() {
   try {
 
     const snapshot = await getDocs(collection(db, "programs"));
-
+console.log("Documents:", snapshot.docs.map(doc => ({
+  id: doc.id,
+  data: doc.data()
+})));
     if (snapshot.empty) {
       list.innerHTML = "अभी कोई प्रोग्राम नहीं है";
       return;
