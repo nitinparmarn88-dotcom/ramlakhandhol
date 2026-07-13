@@ -158,30 +158,33 @@ console.log("Documents:", snapshot.docs.map(doc => ({
 }
 
 loadPrograms();
-async function loadVideo(){
+async function loadVideo() {
 
-const video = document.getElementById("youtubeVideo");
+  const video = document.getElementById("youtubeVideo");
 
-if(!video) return;
+  if (!video) return;
 
-const snap = await getDoc(doc(db,"videos","video1"));
+  try {
 
-if(snap.exists()){
+    const snap = await getDoc(doc(db, "videos", "video1"));
 
-let url = snap.data().url;
+    if (!snap.exists()) return;
 
-let videoId = "";
+    let url = snap.data().url.trim();
 
-if (url.includes("youtu.be")) {
-    videoId = url.split("youtu.be/")[1].split("?")[0];
-}
-else if (url.includes("watch?v=")) {
-    videoId = url.split("watch?v=")[1].split("&")[0];
-}
+    let videoId = "";
 
-video.src = "https://www.youtube.com/embed/" + videoId;
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1].split("?")[0];
+    } else if (url.includes("watch?v=")) {
+      videoId = url.split("watch?v=")[1].split("&")[0];
+    }
 
-}
+    video.src = `https://www.youtube.com/embed/${videoId}`;
+
+  } catch (e) {
+    console.log("Video Error:", e);
+  }
 
 }
 
