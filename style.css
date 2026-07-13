@@ -137,3 +137,31 @@ text-shadow:
 }
 
 }
+.slider{
+
+overflow:hidden;
+
+}
+
+.slide{
+
+animation:zoomEffect 8s ease-in-out infinite;
+
+}
+
+@keyframes zoomEffect{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.12);
+
+}
+
+}
+    
