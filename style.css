@@ -21,3 +21,21 @@ body{
 .gallery img:hover{
     transform:scale(1.05);
 }
+.call-btn,
+.book-btn,
+.insta-btn,
+.btn{
+
+transition:0.3s ease;
+
+}
+
+.call-btn:hover,
+.book-btn:hover,
+.insta-btn:hover,
+.btn:hover{
+
+transform:translateY(-5px);
+box-shadow:0 0 20px orange;
+
+}
