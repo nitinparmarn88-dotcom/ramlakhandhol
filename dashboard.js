@@ -115,11 +115,14 @@ window.deleteProgram = async function(id){
 loadPrograms();
 window.editProgram = function(id, date, location, event, dhol, details){
 
+    editId = id;
+
     document.getElementById("date").value = date;
     document.getElementById("location").value = location;
     document.getElementById("event").value = event;
     document.getElementById("dhol").value = dhol;
     document.getElementById("details").value = details;
 
-    alert("अब जानकारी बदलो, Update वाला फीचर अगले स्टेप में जोड़ेंगे।");
+    document.getElementById("update").style.display = "block";
+    document.getElementById("save").style.display = "none";
 }
