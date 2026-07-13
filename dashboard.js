@@ -20,7 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
+let editId = null;
 // Save Program
 document.getElementById("save").addEventListener("click", async () => {
 
