@@ -3,6 +3,7 @@ body{
     font-family:Arial,sans-serif;
     background:#111;
     color:white;
+    padding-top:80px;
 }
 .gallery{
     display:grid;
@@ -167,3 +168,42 @@ transform:scale(1.12);
 
 }
     
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,165,0,.3);
+
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+header h2{
+    margin:0;
+    color:#ff9800;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff9800;
+}
