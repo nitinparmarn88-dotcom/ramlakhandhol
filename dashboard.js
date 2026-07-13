@@ -184,7 +184,7 @@ document.getElementById("logout").onclick = async () => {
 // ==========================
 // YouTube Video Save
 // ==========================
-
+console.log("Video Code Loaded");
 document.getElementById("saveVideo").addEventListener("click", async ()=>{
 
     const url = document.getElementById("videoUrl").value;
