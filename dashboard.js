@@ -7,7 +7,9 @@ import {
   getDocs,
   deleteDoc,
   doc,
-  updateDoc
+  updateDoc,
+  setDoc,
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyBu191EYsFJSg2yiKA2xTjGIycAMuKRxZo",
@@ -179,3 +181,27 @@ document.getElementById("logout").onclick = async () => {
   window.location.href="admin.html";
 
 };
+// ==========================
+// YouTube Video Save
+// ==========================
+
+document.getElementById("saveVideo").addEventListener("click", async ()=>{
+
+    const url = document.getElementById("videoUrl").value;
+
+    if(!url){
+        alert("YouTube Link डालो");
+        return;
+    }
+
+    await setDoc(doc(db,"videos","video1"),{
+
+        url:url
+
+    });
+
+    alert("✅ Video Saved");
+
+    document.getElementById("videoUrl").value="";
+
+});
