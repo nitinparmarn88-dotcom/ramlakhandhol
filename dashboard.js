@@ -100,6 +100,8 @@ async function loadPrograms() {
 // Delete Program
 window.deleteProgram = async function(id){
 
+  console.log("Delete clicked", id);
+  
   if(confirm("क्या आप Delete करना चाहते हैं?")){
 
     await deleteDoc(doc(db,"programs",id));
@@ -113,6 +115,8 @@ window.deleteProgram = async function(id){
 }
 document.getElementById("update").addEventListener("click", async () => {
 
+  console.log("Update button clicked");
+  
   if(!editId){
     alert("कोई Program Select नहीं है");
     return;
