@@ -111,6 +111,41 @@ window.deleteProgram = async function(id){
   }
 
 }
+document.getElementById("update").addEventListener("click", async () => {
+
+  if(!editId){
+    alert("कोई Program Select नहीं है");
+    return;
+  }
+
+  try {
+
+    await updateDoc(doc(db,"programs",editId), {
+
+      date: document.getElementById("date").value,
+      location: document.getElementById("location").value,
+      event: document.getElementById("event").value,
+      dhol: document.getElementById("dhol").value,
+      details: document.getElementById("details").value
+
+    });
+
+    alert("✅ Program Updated");
+
+    editId = null;
+
+    document.getElementById("update").style.display="none";
+    document.getElementById("save").style.display="block";
+
+    loadPrograms();
+
+  } catch(error){
+
+    alert("❌ Error: " + error.message);
+
+  }
+
+});
 
 loadPrograms();
 window.editProgram = function(id, date, location, event, dhol, details){
