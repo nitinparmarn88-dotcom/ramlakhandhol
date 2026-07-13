@@ -173,11 +173,11 @@ let url = snap.data().url;
 
 let videoId = "";
 
-if(url.includes("youtu.be")){
-    videoId = url.split("youtu.be/")[1];
+if (url.includes("youtu.be")) {
+    videoId = url.split("youtu.be/")[1].split("?")[0];
 }
-else if(url.includes("watch?v=")){
-    videoId = url.split("watch?v=")[1];
+else if (url.includes("watch?v=")) {
+    videoId = url.split("watch?v=")[1].split("&")[0];
 }
 
 video.src = "https://www.youtube.com/embed/" + videoId;
