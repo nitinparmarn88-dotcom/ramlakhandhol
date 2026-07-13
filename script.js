@@ -157,3 +157,35 @@ console.log("Documents:", snapshot.docs.map(doc => ({
 }
 
 loadPrograms();
+import {
+getDoc,
+doc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+async function loadVideo(){
+
+const video = document.getElementById("youtubeVideo");
+
+if(!video) return;
+
+
+const snap = await getDoc(doc(db,"videos","video1"));
+
+
+if(snap.exists()){
+
+let url = snap.data().url;
+
+
+let id = url.split("v=")[1];
+
+
+video.src = "https://www.youtube.com/embed/" + id;
+
+}
+
+}
+
+
+loadVideo();
